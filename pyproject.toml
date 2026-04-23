@@ -1,6 +1,6 @@
 [project]
 name = "logterm"
-version = "0.1.0.dev2"
+version = "0.1.0.dev3"
 description = "A library and CLI tool for analysing log files 🧐"
 readme = "README.md"
 authors = [
