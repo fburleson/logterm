@@ -1,13 +1,16 @@
 [project]
 name = "logterm"
-version = "0.1.0.dev1"
-description = "Add your description here"
+version = "0.1.0"
+description = "A library and CLI tool for analysing log files 🧐"
 readme = "README.md"
 authors = [
     { name = "fburleson", email = "joelburleson0104@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "rich>=15.0.0",
+    "textual>=8.2.4",
+]
 
 [build-system]
 requires = ["uv_build>=0.9.7,<0.10.0"]
@@ -21,3 +24,6 @@ dev = [
     "pytest>=9.0.3",
     "ruff>=0.15.11",
 ]
+
+[project.scripts]
+logterm = "logterm.app.main:_cli"
