@@ -13,8 +13,15 @@ A library and CLI tool for analysing log files 🧐
 ### Install
 
 #### uv
+
+##### As CLI tool
 ```bash
 uv tool install git+https://github.com/fburleson/logterm.git
+```
+
+##### As project dependency
+```bash
+uv add git+https://github.com/fburleson/logterm.git
 ```
 
 #### pip
