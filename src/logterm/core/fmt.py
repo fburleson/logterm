@@ -8,7 +8,7 @@ def from_jsonl(
     entry: str,
     *,
     event: str = "event",
-    dt: str = "datetime",
+    dt: str = "timestamp",
     level: str = "level",
 ) -> Log:
     log: dict[str, str] = json.loads(entry)
