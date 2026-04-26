@@ -38,17 +38,17 @@ uvx logterm 20260403.log
 
 #### Python
 
-Run logterm as a seperate process in Python.
+Run logterm on a separate in Python.
 
 ```python
-import multiprocessing
+import threading
 from pathlib import Path
 
 from logterm.app.main import run
 
 def main():
-    logterm_process = multiprocessing.Process(target=run, args=(Path("20260403.log"),), daemon=True)
-    logterm_process.run()
+    logterm_process = threading.Thread(target=run, args=(Path("20260403.log"),))
+    logterm_process.start()
 
 
 if __name__ == "__main__":
