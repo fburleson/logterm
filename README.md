@@ -38,7 +38,7 @@ uvx logterm 20260403.log
 
 #### Python
 
-Run logterm on a separate in Python.
+Run logterm on a separate thread in Python.
 
 ```python
 import threading
