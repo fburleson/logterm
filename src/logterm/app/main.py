@@ -30,12 +30,16 @@ class LogTerm(App):
         self.set_interval(1, log_table.update_logs)
 
 
-def _cli():
+def cli():
     parser = ArgumentParser()
     parser.add_argument("file", help="The log file.")
     args: Namespace = parser.parse_args()
-    run(args.file)
+    run(Path(args.file))
 
 
 def run(file: Path):
-    LogTerm(LogStream(Path(file))).run()
+    LogTerm(LogStream(file, tz=datetime.now().tzinfo)).run()  # type: ignore
+
+
+if __name__ == "__main__":
+    cli()

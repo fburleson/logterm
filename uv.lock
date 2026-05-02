@@ -79,7 +79,7 @@ wheels = [
 
 [[package]]
 name = "logterm"
-version = "0.1.0.dev4"
+version = "0.1.2"
 source = { editable = "." }
 dependencies = [
     { name = "rich" },

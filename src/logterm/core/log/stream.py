@@ -1,3 +1,4 @@
+from datetime import timezone
 from io import TextIOWrapper
 from pathlib import Path
 from typing import Callable, Self
@@ -12,9 +13,11 @@ class LogStream:
         path: Path,
         *,
         fmt_func: Callable[..., Log] = from_jsonl,
+        tz: timezone = timezone.utc,
     ):
         self._file: TextIOWrapper = open(path, mode="r")
         self._fmt_func: Callable[..., Log] = fmt_func
+        self._tz: timezone = tz
 
     def __enter__(self):
         return self
@@ -26,7 +29,7 @@ class LogStream:
         return self
 
     def __next__(self) -> Log:
-        log: Log = self._fmt_func(next(self._file))
+        log: Log = self._fmt_func(next(self._file), tz=self._tz)
         return log
 
     def close(self):
