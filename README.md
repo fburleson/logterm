@@ -1,3 +1,4 @@
+[![repo quality](https://github.com/fburleson/logterm/actions/workflows/repo_quality.yaml/badge.svg)](https://github.com/fburleson/logterm/actions/workflows/repo_quality.yaml)
 # logterm
 
 A library and CLI tool for analysing log files 🧐
